@@ -1,0 +1,3 @@
+cat ~/.dotfiles/vscode/extensions | while read -r line ; do
+    code --install-extension $line --force
+done

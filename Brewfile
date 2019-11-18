@@ -28,7 +28,7 @@ cask 'rambox'
 cask 'bettertouchtool'
 cask 'aerial'
 cask 'spotify'
-cask 'hyper'
+cask 'alacritty'
 cask 'google-cloud-sdk'
 cask 'visual-studio-code'
 
