@@ -8,3 +8,5 @@ ssh.symlink/id_rsa
 ssh.symlink/id_rsa.pub
 ssh.symlink/known_hosts
 drone/path.zsh
+ssh.symlink/github_rsa.pub
+ssh.symlink/github_rsa
