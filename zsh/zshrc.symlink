@@ -1,6 +1,13 @@
 # shortcut to this dotfiles path is $ZSH
 DISABLE_AUTO_UPDATE=true
 
+ # Ensure a ssh-agent is running
+ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+   eval `ssh-agent`
+   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+ fi
+ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
