@@ -1,4 +1,5 @@
 {
+  "git.enableCommitSigning": true,
   "workbench.colorTheme": "Dracula",
   "javascript.validate.enable": false,
   "git.autofetch": true,
@@ -41,5 +42,8 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "metals.javaHome": "/Users/thomasnairn/.jabba/jdk/adopt@1.11.0-6/Contents/Home",
+  "html.mirrorCursorOnMatchingTag": true
 }

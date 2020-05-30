@@ -4,7 +4,10 @@
 #
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
-
+if ! is-mac; then
+  echo "Skipping homebrew"
+  exit 0
+fi
 # Check for Homebrew
 if test ! $(which brew)
 then

@@ -9,9 +9,7 @@ backupCodeExt() {
     fi
 }
 
-exec < /dev/tty
-
-if tty -s; then 
+if is-interactive; then 
 backupCodeExt
 else
 $ZSH/bin/log_warn "Skipping VSCode syncing as not interactive."
