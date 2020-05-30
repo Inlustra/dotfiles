@@ -1,5 +1,5 @@
 {
-  "git.enableCommitSigning": true,
+  "git.enableCommitSigning": false,
   "workbench.colorTheme": "Dracula",
   "javascript.validate.enable": false,
   "git.autofetch": true,

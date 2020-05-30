@@ -41,7 +41,5 @@
 [user]
 	signingkey = F78E3B586ADB1CDA
 	email = thomas@thenairn.com
-[commit]
-	gpgsign = true
 [gpg]
 	program = gpg
