@@ -22,6 +22,8 @@ if hubInPath; then
     echo "hub already installed"
 else
     if aptInPath; then
+        add-apt-repository ppa:cpick/hub
+        apt-get update
         apt-get install -y hub 
     fi;
 fi
