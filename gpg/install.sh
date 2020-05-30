@@ -20,7 +20,7 @@ generate_gpg() {
     $ZSH/bin/log_info "Email: $EMAIL"
 
     if ! tty -s; then
-        if [ -z "${GPG_PASSPHRASE}" ]; then;
+        if [ -z "${GPG_PASSPHRASE}" ]; then
             $ZSH/bin/log_warn "Not in interactive mode but also no GPG_PASSPHRASE set. Quitting." 
             exit 1
         fi
