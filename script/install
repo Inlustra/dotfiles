@@ -6,7 +6,7 @@ set -e
 
 cd "$(dirname $0)"/..
 
-if is-mac; then
+if [ "$(uname -s)" == "Darwin" ]; then
     # Run Homebrew through the Brewfile
     echo "› brew bundle"
     brew bundle

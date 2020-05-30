@@ -19,14 +19,14 @@ generate_gpg() {
     fi
     $ZSH/bin/log_info "Email: $EMAIL"
 
-    if ! is-interactive; then
+    if ! tty -s; then
         if [ -z "${GPG_PASSPHRASE}" ]; then;
             $ZSH/bin/log_warn "Not in interactive mode but also no GPG_PASSPHRASE set. Quitting." 
             exit 1
         fi
         CONFIRMED_PASSPHRASE=GPG_PASSPHRASE
     fi
-    
+
     while [[ $CONFIRMED_PASSPHRASE == '' ]]
     do
         while [[ $PASSPHRASE == '' ]] 
