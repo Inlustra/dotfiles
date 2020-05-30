@@ -1,3 +1,4 @@
+ZSH=$HOME/.dotfiles
 
 antibodyInPath() {
   if [[ -n $ZSH_VERSION ]]; then
@@ -9,7 +10,10 @@ antibodyInPath() {
 
  antibody_path=$(which antibody)
  if antibodyInPath; then
-    echo "Antibody already installed"
+    $ZSH/bin/log_info "Antibody already installed"
  else
     curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
  fi
+
+$ZSH/bin/log_info "Updating zsh plugins..."
+antibody bundle < $ZSH/zsh/zsh_plugins > $ZSH/zsh/zsh_plugins.sh

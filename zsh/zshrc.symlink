@@ -24,9 +24,7 @@ do
   source $file
 done
 
-source <(antibody init)
-
-antibody bundle < ~/.zsh_plugins
+source $ZSH/zsh/zsh_plugins.sh
 
 # load everything but the path and completion files
 for file in ${${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/pre-commit.zsh}:#*/post-merge.zsh}
