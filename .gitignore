@@ -10,3 +10,4 @@ ssh.symlink/known_hosts
 drone/path.zsh
 ssh.symlink/github_rsa.pub
 ssh.symlink/github_rsa
+aws.symlink/credentials
