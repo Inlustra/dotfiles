@@ -1,6 +1,8 @@
 [default]
 region = eu-central-1
-[profile nonprod]
+[profile international-nonprod]
+account_id = 258582032712
 region = eu-central-1
-[profile prod]
+[profile international-prod]
+account_id = 516878854155
 region = eu-central-1

@@ -10,12 +10,12 @@ awsGetSession() {
 
     hash jq 2>/dev/null || { echo >&2 "This script requires jq (https://stedolan.github.io/jq/) but it's not installed. Aborting."; exit 1; }
 
-    account_id=${AWS_ACCOUNT_ID?Please set the AWS_ACCOUNT_ID environment variable}
+    account_id=$(aws --profile $AWS_PROFILE configure get account_id)
     iam_user=${AWS_IAM_USER?Please set the AWS_IAM_USER environment variable}
     bootstrap_profile=${AWS_BOOTSTRAP_PROFILE?Please set the AWS_BOOTSTRAP_PROFILE environment variable}
     profile=${AWS_PROFILE?Please set the AWS_PROFILE environment variable}
 
-    mfa_code=${1?MFA code not supplied. Usage: get-sts-session <MFA code>}
+    mfa_code=${1?MFA code not supplied. Usage: awsGetSession <MFA code>}
 
     output=$(aws --profile $bootstrap_profile sts get-session-token --serial-number arn:aws:iam::${account_id}:mfa/${iam_user} --output json --token-code $mfa_code)
     aws_access_key_id=$(echo $output | jq -r --exit-status '.Credentials.AccessKeyId')
@@ -53,10 +53,9 @@ awsLogin() {
     exit
     fi
 
-    export AWS_ACCOUNT_ID=516878854155
     export AWS_IAM_USER=$2
     export AWS_BOOTSTRAP_PROFILE=$1-bootstrap
     export AWS_PROFILE=$1
 
-    awsGetSession "$2"
+    awsGetSession "$3"
 }
