@@ -12,5 +12,11 @@ if [ "$(uname -s)" == "Darwin" ]; then
     brew bundle
 fi
 
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do bash -c "${installer}" ; done
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+then
+    find . -name install-nix.sh | while read installer ; do bash -c "${installer}" ; done
+fi
