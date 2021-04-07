@@ -21,7 +21,7 @@ link_file () {
 
   if ! tty -s; then
     user "Not in interactive mode, assuming overwrite all"
-    overwrite_all=true;;
+    overwrite_all=true
   fi
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
