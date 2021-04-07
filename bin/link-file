@@ -2,6 +2,8 @@
 
 overwrite_all=false backup_all=false skip_all=false
 
+
+
 user () {
   printf "\r  [ \033[0;33m??\033[0m ] $1\n"
 }
@@ -15,6 +17,12 @@ link_file () {
 
   local overwrite= backup= skip=
   local action=
+
+
+  if ! tty -s; then
+    user "Not in interactive mode, assuming overwrite all"
+    overwrite_all=true;;
+  fi
 
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
